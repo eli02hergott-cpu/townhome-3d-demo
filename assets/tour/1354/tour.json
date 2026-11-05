@@ -1,0 +1,277 @@
+{
+ "plan": "1354",
+ "unit": "End unit A",
+ "start": "outside",
+ "nodes": [
+  {
+   "id": "outside",
+   "name": "Front of the home",
+   "floor": 0,
+   "look": 0,
+   "links": [
+    {
+     "to": "foyer",
+     "label": "Go inside",
+     "yaw": 0.0,
+     "pitch": -7.5
+    }
+   ]
+  },
+  {
+   "id": "foyer",
+   "name": "Foyer",
+   "floor": 0,
+   "look": 0,
+   "links": [
+    {
+     "to": "outside",
+     "label": "Front porch",
+     "yaw": -175.1,
+     "pitch": -29.7
+    },
+    {
+     "to": "kitchen",
+     "label": "Kitchen",
+     "yaw": -9.3,
+     "pitch": -10.0
+    },
+    {
+     "to": "hall",
+     "label": "Upstairs",
+     "yaw": 17.2,
+     "pitch": 9.9
+    }
+   ]
+  },
+  {
+   "id": "kitchen",
+   "name": "Kitchen",
+   "floor": 0,
+   "look": -95,
+   "links": [
+    {
+     "to": "dining",
+     "label": "Dining room",
+     "yaw": 45.0,
+     "pitch": -23.8
+    },
+    {
+     "to": "living",
+     "label": "Living room",
+     "yaw": 9.5,
+     "pitch": -11.6
+    },
+    {
+     "to": "breakfast",
+     "label": "Breakfast room",
+     "yaw": -21.8,
+     "pitch": -24.9
+    },
+    {
+     "to": "foyer",
+     "label": "Foyer",
+     "yaw": 162.8,
+     "pitch": -23.5
+    }
+   ]
+  },
+  {
+   "id": "dining",
+   "name": "Dining room",
+   "floor": 0,
+   "look": -110,
+   "links": [
+    {
+     "to": "kitchen",
+     "label": "Kitchen",
+     "yaw": -135.0,
+     "pitch": -23.8
+    },
+    {
+     "to": "breakfast",
+     "label": "Breakfast room",
+     "yaw": -77.7,
+     "pitch": -12.0
+    },
+    {
+     "to": "living",
+     "label": "Living room",
+     "yaw": -14.0,
+     "pitch": -16.9
+    },
+    {
+     "to": "foyer",
+     "label": "Foyer",
+     "yaw": -166.4,
+     "pitch": -14.3
+    }
+   ]
+  },
+  {
+   "id": "breakfast",
+   "name": "Breakfast room",
+   "floor": 0,
+   "look": 60,
+   "links": [
+    {
+     "to": "dining",
+     "label": "Dining room",
+     "yaw": 102.3,
+     "pitch": -12.0
+    },
+    {
+     "to": "living",
+     "label": "Living room",
+     "yaw": 59.9,
+     "pitch": -12.8
+    },
+    {
+     "to": "kitchen",
+     "label": "Kitchen",
+     "yaw": 118.6,
+     "pitch": -21.8
+    }
+   ]
+  },
+  {
+   "id": "living",
+   "name": "Living room",
+   "floor": 0,
+   "look": -165,
+   "links": [
+    {
+     "to": "foyer",
+     "label": "Foyer",
+     "yaw": -179.0,
+     "pitch": -8.1
+    },
+    {
+     "to": "dining",
+     "label": "Dining room",
+     "yaw": 166.0,
+     "pitch": -16.9
+    },
+    {
+     "to": "breakfast",
+     "label": "Breakfast room",
+     "yaw": -120.1,
+     "pitch": -12.8
+    }
+   ]
+  },
+  {
+   "id": "hall",
+   "name": "Upstairs hall",
+   "floor": 1,
+   "look": 0,
+   "links": [
+    {
+     "to": "foyer",
+     "label": "Downstairs",
+     "yaw": 122.6,
+     "pitch": -47.1
+    },
+    {
+     "to": "primary",
+     "label": "Primary bedroom",
+     "yaw": -167.9,
+     "pitch": -17.2
+    },
+    {
+     "to": "bath2",
+     "label": "Bath 2",
+     "yaw": -43.4,
+     "pitch": -26.1
+    },
+    {
+     "to": "bed3",
+     "label": "Bedroom 3",
+     "yaw": -9.0,
+     "pitch": -14.6
+    },
+    {
+     "to": "bed2",
+     "label": "Bedroom 2",
+     "yaw": -28.7,
+     "pitch": -13.0
+    }
+   ]
+  },
+  {
+   "id": "primary",
+   "name": "Primary bedroom",
+   "floor": 1,
+   "look": 180,
+   "links": [
+    {
+     "to": "hall",
+     "label": "Upstairs hall",
+     "yaw": 46.5,
+     "pitch": -25.5
+    },
+    {
+     "to": "primarybath",
+     "label": "Primary bath",
+     "yaw": -55.6,
+     "pitch": -19.9
+    }
+   ]
+  },
+  {
+   "id": "primarybath",
+   "name": "Primary bath",
+   "floor": 1,
+   "look": 180,
+   "links": [
+    {
+     "to": "primary",
+     "label": "Primary bedroom",
+     "yaw": -172.7,
+     "pitch": -35.3
+    }
+   ]
+  },
+  {
+   "id": "bath2",
+   "name": "Bath 2",
+   "floor": 1,
+   "look": -90,
+   "links": [
+    {
+     "to": "hall",
+     "label": "Upstairs hall",
+     "yaw": 87.0,
+     "pitch": -33.1
+    }
+   ]
+  },
+  {
+   "id": "bed2",
+   "name": "Bedroom 2",
+   "floor": 1,
+   "look": 0,
+   "links": [
+    {
+     "to": "hall",
+     "label": "Upstairs hall",
+     "yaw": 148.5,
+     "pitch": -24.6
+    }
+   ]
+  },
+  {
+   "id": "bed3",
+   "name": "Bedroom 3",
+   "floor": 1,
+   "look": 0,
+   "links": [
+    {
+     "to": "hall",
+     "label": "Upstairs hall",
+     "yaw": -144.0,
+     "pitch": -24.7
+    }
+   ]
+  }
+ ]
+}

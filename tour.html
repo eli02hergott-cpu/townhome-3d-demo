@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>360° tour · Townhome demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400..600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@5.15.1/index.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/virtual-tour-plugin@5.15.1/index.css" />
+  <link rel="stylesheet" href="tour.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js",
+        "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core@5.15.1/index.module.js",
+        "@photo-sphere-viewer/markers-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/markers-plugin@5.15.1/index.module.js",
+        "@photo-sphere-viewer/virtual-tour-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/virtual-tour-plugin@5.15.1/index.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="viewer"></div>
+
+  <header class="t-top">
+    <div class="t-title"><span class="t-eyebrow">360° tour</span><strong id="tPlan">The 1435</strong></div>
+    <div class="t-where" id="tWhere">&nbsp;</div>
+    <button class="t-close" id="tClose" aria-label="Close the tour">✕</button>
+  </header>
+
+  <nav class="t-rooms" id="tRooms" aria-label="Rooms"></nav>
+
+  <div class="t-help" id="tHelp">
+    <span class="desk">Drag to look around · Click an arrow or a room below to move</span>
+    <span class="touch">Drag to look around · Tap an arrow or a room below to move</span>
+  </div>
+
+  <div class="t-loading" id="tLoading">
+    <div><span class="spin"></span><p>Loading the home…</p></div>
+  </div>
+
+  <p class="t-note" id="tNote"></p>
+
+  <script type="module" src="tour.js"></script>
+</body>
+</html>

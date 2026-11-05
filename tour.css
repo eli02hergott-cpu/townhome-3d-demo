@@ -1,0 +1,55 @@
+:root {
+  --ink: #f7f4ee; --bone: #22231f; --bone-2: #4b4b44; --muted: #8b867a;
+  --brass: #a8813f; --line: rgba(34, 35, 31, .13);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #22231f; font-family: Inter, system-ui, sans-serif; color: var(--bone); }
+#viewer { position: fixed; inset: 0; }
+button { font: inherit; color: inherit; }
+
+.t-top { position: fixed; top: 0; left: 0; right: 0; display: flex; align-items: center; gap: 16px; padding: 16px 20px; pointer-events: none; z-index: 10; }
+.t-top > * { pointer-events: auto; }
+.t-title { background: rgba(247, 244, 238, .92); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 14px; padding: 10px 16px; display: flex; flex-direction: column; }
+.t-eyebrow { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--brass); }
+.t-title strong { font-family: Fraunces, serif; font-weight: 500; font-size: 20px; }
+.t-where { margin: 0 auto; background: rgba(34, 35, 31, .78); color: #f7f4ee; padding: 8px 16px; border-radius: 99px; font-size: 14px; transition: opacity .3s; }
+.t-where:empty, .t-where.hide { opacity: 0; }
+.t-close { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(247, 244, 238, .92); cursor: pointer; font-size: 16px; }
+.t-close:hover { background: #fff; }
+
+.t-rooms { position: fixed; left: 50%; bottom: 58px; transform: translateX(-50%); max-width: calc(100% - 32px); display: flex; gap: 6px; padding: 6px; background: rgba(247, 244, 238, .92); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 16px; overflow-x: auto; scrollbar-width: none; z-index: 10; }
+.t-rooms::-webkit-scrollbar { display: none; }
+.t-rooms .sep { width: 1px; background: var(--line); margin: 6px 4px; flex: none; }
+.t-rooms .lvl { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); align-self: center; padding: 0 6px; flex: none; }
+.t-rooms button { flex: none; border: 0; background: transparent; padding: 9px 13px; border-radius: 11px; font-size: 13.5px; cursor: pointer; white-space: nowrap; color: var(--bone-2); }
+.t-rooms button:hover { background: rgba(34, 35, 31, .06); color: var(--bone); }
+.t-rooms button.on { background: var(--bone); color: var(--ink); }
+
+.t-help { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); font-size: 12.5px; color: var(--bone-2); background: rgba(247, 244, 238, .85); padding: 5px 12px; border-radius: 99px; white-space: nowrap; transition: opacity .6s; z-index: 10; }
+.t-help.hide { opacity: 0; }
+.t-help .touch { display: none; }
+@media (hover: none) { .t-help .desk { display: none; } .t-help .touch { display: inline; } }
+
+/* arrows to the next room */
+.t-link { display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: pointer; transition: transform .25s; }
+.t-link:hover { transform: translateY(-3px); }
+.t-link-dot { width: 46px; height: 46px; border-radius: 50%; background: rgba(247, 244, 238, .9); border: 2px solid #fff; box-shadow: 0 6px 18px rgba(0, 0, 0, .35); position: relative; }
+.t-link-dot::after { content: ""; position: absolute; left: 50%; top: 50%; width: 12px; height: 12px; margin: -4px 0 0 -6px; border-left: 3px solid var(--bone); border-top: 3px solid var(--bone); transform: rotate(45deg); }
+.t-link:hover .t-link-dot { background: var(--brass); }
+.t-link:hover .t-link-dot::after { border-color: #fff; }
+.t-link-label { background: rgba(34, 35, 31, .82); color: #f7f4ee; font-size: 13px; padding: 4px 10px; border-radius: 99px; white-space: nowrap; }
+
+.t-loading { position: fixed; inset: 0; display: grid; place-items: center; background: var(--ink); transition: opacity .6s; z-index: 20; }
+.t-loading.hide { opacity: 0; pointer-events: none; }
+.t-loading div { text-align: center; color: var(--bone-2); font-size: 14px; }
+.t-loading .spin { display: inline-block; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); border-top-color: var(--brass); animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.t-note { position: fixed; left: 22px; top: 84px; margin: 0; font-size: 11px; color: var(--bone-2); background: rgba(247, 244, 238, .8); padding: 3px 8px; border-radius: 6px; z-index: 10; }
+@media (max-width: 760px) {
+  .t-note { display: none; }
+  .t-where { display: none; }
+  .t-rooms { bottom: 48px; }
+  .t-help { font-size: 11.5px; bottom: 14px; }
+  .t-link-dot { width: 40px; height: 40px; }
+}
