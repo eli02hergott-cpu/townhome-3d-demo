@@ -61,11 +61,12 @@ const tour = viewer.getPlugin(VirtualTourPlugin);
 
 /* room strip, grouped by floor */
 const rooms = $("#tRooms");
-[0, 1].forEach((f) => {
+const LVL = { "-1": "Outside", 0: "Main floor", 1: "Upstairs" };
+[-1, 0, 1].forEach((f) => {
   const list = data.nodes.filter((n) => n.floor === f);
   if (!list.length) return;
-  if (f) rooms.insertAdjacentHTML("beforeend", `<span class="sep"></span>`);
-  rooms.insertAdjacentHTML("beforeend", `<span class="lvl">${f ? "Upstairs" : "Main floor"}</span>`);
+  if (rooms.children.length) rooms.insertAdjacentHTML("beforeend", `<span class="sep"></span>`);
+  rooms.insertAdjacentHTML("beforeend", `<span class="lvl">${LVL[f]}</span>`);
   list.forEach((n) => rooms.insertAdjacentHTML("beforeend", `<button type="button" data-id="${n.id}">${n.name}</button>`));
 });
 rooms.addEventListener("click", (e) => {

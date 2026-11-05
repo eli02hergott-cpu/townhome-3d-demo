@@ -6,7 +6,7 @@
   {
    "id": "outside",
    "name": "Front of the home",
-   "floor": 0,
+   "floor": -1,
    "look": 0,
    "links": [
     {
@@ -14,6 +14,12 @@
      "label": "Go inside",
      "yaw": 0.0,
      "pitch": -8.4
+    },
+    {
+     "to": "side",
+     "label": "Side of the home",
+     "yaw": -59.2,
+     "pitch": -9.3
     }
    ]
   },
@@ -40,6 +46,12 @@
      "label": "Upstairs",
      "yaw": 28.0,
      "pitch": 6.9
+    },
+    {
+     "to": "garage",
+     "label": "Garage",
+     "yaw": -88.7,
+     "pitch": -38.7
     }
    ]
   },
@@ -72,6 +84,12 @@
      "label": "Foyer",
      "yaw": 151.2,
      "pitch": -20.1
+    },
+    {
+     "to": "halfbath",
+     "label": "Half bath",
+     "yaw": 134.7,
+     "pitch": -13.6
     }
    ]
   },
@@ -104,6 +122,12 @@
      "label": "Foyer",
      "yaw": -179.3,
      "pitch": -6.8
+    },
+    {
+     "to": "halfbath",
+     "label": "Half bath",
+     "yaw": 164.5,
+     "pitch": -14.9
     }
    ]
   },
@@ -150,6 +174,12 @@
      "label": "Breakfast room",
      "yaw": -117.6,
      "pitch": -11.9
+    },
+    {
+     "to": "rear",
+     "label": "Back yard",
+     "yaw": -75.6,
+     "pitch": -14.8
     }
    ]
   },
@@ -284,6 +314,74 @@
      "label": "Bedroom 3",
      "yaw": 3.1,
      "pitch": -41.7
+    }
+   ]
+  },
+  {
+   "id": "halfbath",
+   "name": "Half bath",
+   "floor": 0,
+   "look": 0,
+   "links": [
+    {
+     "to": "dining",
+     "label": "Dining room",
+     "yaw": -82.5,
+     "pitch": -43.2
+    }
+   ]
+  },
+  {
+   "id": "garage",
+   "name": "Garage",
+   "floor": 0,
+   "look": 180,
+   "links": [
+    {
+     "to": "foyer",
+     "label": "Foyer",
+     "yaw": 108.2,
+     "pitch": -14.3
+    }
+   ]
+  },
+  {
+   "id": "side",
+   "name": "Side of the home",
+   "floor": -1,
+   "look": 90,
+   "links": [
+    {
+     "to": "outside",
+     "label": "Front of the home",
+     "yaw": 155.6,
+     "pitch": -10.5
+    },
+    {
+     "to": "rear",
+     "label": "Back yard",
+     "yaw": 19.7,
+     "pitch": -8.6
+    }
+   ]
+  },
+  {
+   "id": "rear",
+   "name": "Back yard",
+   "floor": -1,
+   "look": 180,
+   "links": [
+    {
+     "to": "side",
+     "label": "Side of the home",
+     "yaw": -133.0,
+     "pitch": -12.4
+    },
+    {
+     "to": "living",
+     "label": "Go inside",
+     "yaw": -172.7,
+     "pitch": -8.0
     }
    ]
   }
