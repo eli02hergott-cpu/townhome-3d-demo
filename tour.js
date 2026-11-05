@@ -13,13 +13,8 @@ const base = `assets/tour/${plan}/`;
 const big = Math.max(screen.width, screen.height) * (devicePixelRatio || 1) > 1600 && !matchMedia("(hover: none)").matches;
 const file = (id) => `${base}${id}${big ? "" : "-4k"}.jpg`;
 
-// Inside the demo page the tour sits in a frame: no close button there. Opened full screen, close goes back to the page.
-if (parent !== window) $("#tClose").remove();
-else {
-  const close = () => { location.href = "index.html#tour"; };
-  $("#tClose").addEventListener("click", close);
-  addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
-}
+// Sent as its own link: no page to close back to.
+$("#tClose").remove();
 
 const data = await fetch(`${base}tour.json`).then((r) => r.json());
 $("#tPlan").textContent = `The ${data.plan}`;
